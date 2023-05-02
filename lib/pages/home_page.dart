@@ -1,21 +1,25 @@
+import 'package:bmi_calculator/provider/bmi_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+  static const String routeName = '/homePage';
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  var weightController = TextEditingController();
-  var ftController = TextEditingController();
-  var inController = TextEditingController();
+
 
   bool isMale = true;
 
   @override
   Widget build(BuildContext context) {
+
+    final provider = Provider.of<BmiProvider>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("BMI Calculator"),
@@ -107,27 +111,30 @@ class _HomePageState extends State<HomePage> {
             ),
             //weight textfield for number type
             TextField(
-              controller: weightController,
+              controller: provider.weightController,
               decoration: InputDecoration(
                 label: Text('Enter your weight (in kg)'),
               ),
               keyboardType: TextInputType.number,
+              textInputAction: TextInputAction.next,
+
             ),
             SizedBox(
               height: 15,
             ),
             TextField(
-              controller: ftController,
+              controller: provider.feetController,
               decoration: InputDecoration(
                 label: Text('Enter your weight (in feet)'),
               ),
               keyboardType: TextInputType.number,
+              textInputAction: TextInputAction.next,
             ),
             SizedBox(
               height: 15,
             ),
             TextField(
-              controller: inController,
+              controller: provider.inchController,
               decoration: InputDecoration(
                 label: Text('Enter your weight (in inch)'),
               ),
