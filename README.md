@@ -10,8 +10,8 @@ A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9. BM
 ## Screenshots
 
 <p align="center">
-  <img src="screenshot/home.jpg" width="256" hspace="4">
-  <img src="screenshot/result.jpg" width="256" hspace="4">
+  <img src="screenshots/home.jpg" width="256" hspace="4">
+  <img src="screenshots/result.jpg" width="256" hspace="4">
 </p>
 
 
